@@ -2,10 +2,14 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1><%= locals.title %></h1>
+    <p>Messages</p>
+    <% locals.messages.map((message) => { %>
+    <p><%= message.user %>: <%= message.text %></p>
+    <% }) %>
+    <a href="/new">Add new message</a>
   </body>
 </html>
